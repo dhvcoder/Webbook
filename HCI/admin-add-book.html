@@ -1,0 +1,64 @@
+
+      <!-- loader END -->
+      <!-- Wrapper Start -->
+    
+         <!-- TOP Nav Bar END -->
+         <!-- Page Content  -->
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="iq-card">
+                        <div class="iq-card-header d-flex justify-content-between">
+                           <div class="iq-header-title">
+                              <h4 class="card-title">Thêm sách</h4>
+                           </div>
+                        </div>
+                        <div class="iq-card-body">
+                           <form id="form-add-product" method="post">
+                              <div class="form-group">
+                                 <label>Tên sách:</label>
+                                 <input type="text" class="form-control" name="tensanpham">
+                              </div>
+                              <div class="form-group">
+                                 <label>Danh mục sách:</label>
+                                 <select class="form-control select-category" id="select-category" name="id_danhmuc">
+                                    <option selected="" disabled="">Danh mục sách</option>
+                                 </select>
+                              </div>
+                              <div class="form-group">
+                                 <label>Tác gải sách:</label>
+                                 <select class="form-control select-author"  id="select-author" name="id_tacgia">
+                                    <option selected="" disabled="">Tác giả sách</option>
+                                   
+                                 </select>
+                              </div>
+                              <div class="form-group">
+                                 <label>Hình ảnh:</label>
+                              <div class="form-group">
+                                 <label id="fileInputLabel">File upload</label>
+                                 <input class="file-upload-default mt-2" id="fileInput" type="file" name="Files" required multiple accept="image/*">
+                              </div>
+                              </div>
+                              <div class="form-group">
+                                 <label>Giá sách:</label>
+                                 <input type="number" class="form-control" name="gia">
+                              </div>
+                              <div class="form-group">
+                                 <label>Số lượng:</label>
+                                 <input type="number" class="form-control" name="soluong">
+                              </div>
+                              <div class="form-group">
+                                 <label>Nội dung:</label>
+                                 <textarea class="form-control" rows="4" id="editormota" name="mota"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Gửi</button>
+                              <button type="reset" class="btn btn-danger">Trở lại</button>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <script src="js/adminproduct.js"></script>
+

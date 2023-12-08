@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+const ProductContrller = require('../controller/productController');
+const middleware = require('../controller/middlewareController');
+const middlewareToke = require('../controller/middlewareToke');
+router.get("/getlist" , ProductContrller.get_listAll);
+router.get("/getlist/:id/:page" ,  ProductContrller.get_list);
+// router.get("/getpage" , ProductContrller.Sumpage);
+router.post("/insertProduct" , middlewareToke.checkRoleManager , middleware.checkUploadFile, ProductContrller.insertProduct);
+router.get("/getbyid/:id" , ProductContrller.HandlegetByID );
+router.delete("/delete/:id"  , middlewareToke.checkRoleManager , ProductContrller.HandleDelete );
+router.put("/update/:id" , middlewareToke.checkRoleManager , middleware.checkFileUpdate, ProductContrller.HandleUpdate);
+module.exports = router;
