@@ -12,7 +12,7 @@ function loadData(id_categogy, page) {
     .done(function (response) {
       $(".t-body").empty(); // Clear previous data
       let isFirstOptionAdded = false; // Biến để kiểm tra xem đã thêm option hay chưa
-      if (Array.isArray(response.data)) {
+      if (Array.isArray(response.data) && response.data.length>0 ) {
         let sttStart = (page - 1) * itemsPerPage + 1;
 
         response.data.forEach((value, idx) => {
@@ -37,6 +37,8 @@ function loadData(id_categogy, page) {
           </tr>`;
           $(".t-body").append(html);
         });
+      }else{
+        window.location.href = "404.html";
       }
 
       // Update current page

@@ -56,7 +56,7 @@ const HandleDelete = async (req, res) => {
     await Author.DeleteAuthorID(id);
     res.status(200).send("Xoa Thanh cong");
   } catch (error) {
-    res.status(500).send("SERVER ERRO");
+    res.status(500).send("Khong the xoa tac gia nay");
     console.error(error);
   }
 };

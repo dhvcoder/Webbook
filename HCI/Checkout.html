@@ -104,17 +104,10 @@
                                  <hr>
                                  <p><b>Chi tiết</b></p>
                                  <div class="d-flex justify-content-between mb-1">
-                                    <span>Tổng</span>
-                                    <span>339.900đ</span>
-                                 </div>
-                                 <div class="d-flex justify-content-between mb-1">
                                     <span>Giảm giá</span>
-                                    <span class="text-success">19.900đ</span>
+                                    <span class="text-success">0$</span>
                                  </div>
-                                 <div class="d-flex justify-content-between mb-1">
-                                    <span>Thuế VAT</span>
-                                    <span>16.900đ</span>
-                                 </div>
+                               
                                  <div class="d-flex justify-content-between">
                                     <span>Phí vận chuyển</span>
                                     <span class="text-success">Miễn phí</span>
@@ -122,9 +115,9 @@
                                  <hr>
                                  <div class="d-flex justify-content-between">
                                     <span class="text-dark"><strong>Tổng</strong></span>
-                                    <span class="text-dark"><strong>327.900đ</strong></span>
+                                    <span class="text-dark"><strong id="amount_total"></strong>$</span>
                                  </div>
-                                 <a id="place-order" href="javascript:void();" class="btn btn-primary d-block mt-3 next">Đặt hàng</a>
+                                 <button id="place-order" href="" class="btn w-100 btn-primary d-block mt-3 next">Đặt hàng</button>
                               </div>
                            </div>
                            <div class="iq-card ">
@@ -164,72 +157,53 @@
                                  </div>
                               </div>
                               <div class="iq-card-body">
-                                 <form onsubmit="required()">
                                     <div class="row mt-3">
                                        <div class="col-md-6">
                                           <div class="form-group">
                                              <label>Họ và tên: *</label> 
-                                             <input type="text" class="form-control" name="fname" required="">
+                                             <input type="text" class="form-control" id="fullname" name="fname" required="">
                                           </div>
                                        </div>
                                        <div class="col-md-6">
                                           <div class="form-group"> 
                                              <label>Số điện thoại: *</label> 
-                                             <input type="text" class="form-control" name="mno" required="">
+                                             <input type="text" class="form-control" id="phone" name="mno" required="">
                                           </div>
                                        </div>
                                        <div class="col-md-6">
                                           <div class="form-group"> 
                                              <label>Địa chỉ: *</label> 
-                                             <input type="text" class="form-control" name="houseno" required="">
+                                             <input type="text" class="form-control" id="adres" name="houseno" required="">
                                           </div>
-                                       </div>
-                                       <div class="col-md-6">
-                                          <div class="form-group"> 
-                                             <label>Tỉnh/thành phố: *</label> 
-                                             <input type="text" class="form-control" name="city" required="">
-                                          </div>
-                                       </div>
-                                       <div class="col-md-6">
-                                          <div class="form-group"> 
-                                             <label>Phường: *</label> 
-                                             <input type="text" class="form-control" name="state" required="">
-                                          </div>
-                                       </div>
-                                       <div class="col-md-6">
-                                          <div class="form-group">
-                                             <label for="addtype">Loại địa chỉ</label>
-                                             <select class="form-control" id="addtype">
-                                                <option>Nhà riêng</option>
-                                                <option>Công ty</option>
-                                             </select>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-6">
-                                          <button id="savenddeliver" type="submit" class="btn btn-primary">Lưu và giao tại đây</button>
                                        </div>
                                     </div>
-                                 </form>
                               </div>
                            </div>
                         </div>
                         <div class="col-lg-4">
                            <div class="iq-card">
                               <div class="iq-card-body">
-                                 <h4 class="mb-2">Ông Trần Thuận</h4>
-                                 <div class="shipping-address">
-                                    <p class="mb-0">11 Thành Thái</p>
-                                    <p>Thành phố Đà Nẵng</p>
-                                    <p>0789-999-999</p>
+                                 <h4 class="mb-2">Chi tiết</h4>
+                                 <div class="d-flex justify-content-between">
+                                    <span id="soluong_sp"></span>
+                                    <span><strong class="total"></strong>$</span>
+                                 </div>
+                                 <div class="d-flex justify-content-between">
+                                    <span>Phí vận chuyển</span>
+                                    <span class="text-success">Miễn phí</span>
                                  </div>
                                  <hr>
-                                 <a id="deliver-address" href="javascript:void();" class="btn btn-primary d-block mt-1 next">Tiếp tục</a>
+                                 <div class="d-flex justify-content-between">
+                                    <span>Số tiền phải trả</span>
+                                    <span><strong class="amount_total"></strong>$</span>
+                                 </div>
+                                    <button href="" class="btn w-100 btn-primary d-block mt-3 button-order">Thanh toán</button>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <div id="payment" class="card-block p-0 col-12">
+                  <!-- <div id="payment" class="card-block p-0 col-12">
                      <div class="row align-item-center">
                         <div class="col-lg-8">
                            <div class="iq-card">
@@ -275,7 +249,7 @@
                               </div>
                            </div>
                         </div>
-                        <div class="col-lg-4">
+                         <div class="col-lg-4">
                            <div class="iq-card">
                               <div class="iq-card-body">
                                  <h4 class="mb-2">Chi tiết</h4>
@@ -294,9 +268,9 @@
                                  </div>
                               </div>
                            </div>
-                        </div>
+                        </div> 
                      </div>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </div>

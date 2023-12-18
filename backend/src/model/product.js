@@ -12,8 +12,7 @@ function Product(newProduct){
 
 Product.getProducts = async function(id , limit){
     try {
-        const query =
-          "SELECT sanpham.*, danhmuc.tendanhmuc, tacgia.tentacgia FROM sanpham INNER JOIN danhmuc ON sanpham.id_danhmuc = danhmuc.id INNER JOIN tacgia ON sanpham.tacgia_id = tacgia.id_tacgia WHERE danhmuc.id = ? LIMIT ?, 12;";
+        const query = "SELECT sanpham.*, danhmuc.tendanhmuc, tacgia.tentacgia FROM sanpham INNER JOIN danhmuc ON sanpham.id_danhmuc = danhmuc.id INNER JOIN tacgia ON sanpham.tacgia_id = tacgia.id_tacgia WHERE danhmuc.id = ? ORDER BY sanpham.id_sanpham DESC LIMIT ?, 12";
         const [result] = await connect.query(query , [id, limit]);
         return result;
     } catch (error) {

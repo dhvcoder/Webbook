@@ -135,28 +135,12 @@ function deleteAuthor(id) {
     success: function (data) {
       location.reload();
     },
-    error: function (xhr) {
-      console.log(xhr.status + ": " + xhr.statusText);
-
-      // Handle the error appropriately based on HTTP status code
-      if (xhr.status === 401) {
-        swal({
-          icon: "error",
-          text: "Unauthorized: Không có quyền xóa tác giả.",
-        });
-      } else if (xhr.status === 500) {
-        swal({
-          icon: "error",
-          text: "Internal Server Error: Không thể xóa tác giả.",
-        });
-      } else {
-        // Handle other status codes if needed
-        swal({
-          icon: "error",
-          text: "Unexpected error: " + xhr.status,
-        });
-      }
-
+    error: function (erro) {
+      console.log(erro);
+      swal({
+        icon: "error",
+        text: erro.responseText,
+      });
       $("#modalDelete").modal("hide");
     },
   });
@@ -198,7 +182,6 @@ $("#Update").submit(function (e) {
           text: "Unexpected error: " + xhr.status,
         });
       }
-
     },
   });
 });
