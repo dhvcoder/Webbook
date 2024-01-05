@@ -23,7 +23,7 @@ function loadData(id_categogy, page) {
             <td>${value.ten}</td>
             <td>${value.tendanhmuc}</td>
             <td>${value.tentacgia}</td>
-            <td>${value.gia}$</td>                                      
+            <td>${value.gia}VND</td>                                      
             <td>
                 <div class="flex align-items-center list-user-action">
                     <button type="button" class="btn btn-sm btn-warning mx-1 px-1 py-1" data-toggle="modal" data-target="#modal-update" onclick="GetByID(${value.id_sanpham})">

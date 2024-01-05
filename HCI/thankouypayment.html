@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Booksto - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Typography CSS -->
+    <link rel="stylesheet" href="css/typography.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+z0lU/6ai2P7ppFfRU3VZ4T1f5n/2xs5vmq9i1KjkFhKK4Ai1Wkw6CcEyed2Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function () {
+            $("#header").load("headerShop.html");
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <div id="header">
+
+        </div>
+        <!-- Page Content  -->
+        <div id="content-page" class="content-page">
+            <div class="container-fluid checkout-content">
+                <div class="row">
+                    <div id="cart" class="card-block show p-0 col-12">
+                        <div class="row align-item-center">
+                            <div class="col-lg-8">
+                                <div class="iq-card">
+                                    <div class="iq-card-header text-center iq-border-bottom mb-0">
+                                        <div class="iq-header-title">
+                                            <h4 class="card-title ">Thanh toán thành công </h4>
+                                        </div>
+                                    </div>
+                                    <div class="iq-card-body cart-oki text-center">
+                                        <ul class="list-inline p-0 m-0" id="cart-checkout">
+                                            <li class="checkout-product">
+                                       <div class="row align-items-center">
+                                          <div class="col-sm-12">
+                                            
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="100" fill="currentColor" class="bi bi-check-circle-fill"
+                                                viewBox="0 0 16 16" style="color: #0dd6b8;">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" style="height: 200px; width: 200px;" />
+                                            </svg>
+                                             
+                                          </div>
+                                          
+                                       </div>
+                                    </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="iq-card">
+                                    <div class="iq-card-body">
+                                        <p><b>Chi tiết</b></p>
+                                      
+                                        <div class="d-flex justify-content-between">
+                                            <span>Phí vận chuyển</span>
+                                            <span class="text-success">Miễn phí</span>
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-dark"><strong>Tổng</strong></span>
+                                            <span class="text-dark"><strong id="amount_total"></strong>VND</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="iq-card ">
+                                    <div class="card-body iq-card-body p-0 iq-checkout-policy">
+                                        <ul class="p-0 m-0">
+                                            <li class="d-flex align-items-center">
+                                                <div class="iq-checkout-icon">
+                                                    <i class="ri-checkbox-line"></i>
+                                                </div>
+                                                <h6>Chính sách bảo mật (Thanh toán an toàn và bảo mật.)</h6>
+                                            </li>
+                                            <li class="d-flex align-items-center">
+                                                <div class="iq-checkout-icon">
+                                                    <i class="ri-truck-line"></i>
+                                                </div>
+                                                <h6>Chính sách giao hàng (Giao hàng tận nhà.)</h6>
+                                            </li>
+                                            <li class="d-flex align-items-center">
+                                                <div class="iq-checkout-icon">
+                                                    <i class="ri-arrow-go-back-line"></i>
+                                                </div>
+                                                <h6>Chính sách hoàn trả</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Wrapper END -->
+    <!-- Footer -->
+    <footer class="iq-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacy-policy.html">Chính sách bảo mật</a></li>
+                        <li class="list-inline-item"><a href="terms-of-service.html">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-right">
+                    Copyright 2020 <a href="#">TVteam</a> Đã đăng kí
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer END -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Appear JavaScript -->
+    <script src="js/jquery.appear.js"></script>
+    <!-- Countdown JavaScript -->
+    <script src="js/countdown.min.js"></script>
+    <!-- Counterup JavaScript -->
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Wow JavaScript -->
+    <script src="js/wow.min.js"></script>
+    <!-- Apexcharts JavaScript -->
+    <script src="js/apexcharts.js"></script>
+    <!-- Slick JavaScript -->
+    <script src="js/slick.min.js"></script>
+    <!-- Select2 JavaScript -->
+    <script src="js/select2.min.js"></script>
+    <!-- Owl Carousel JavaScript -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup JavaScript -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Smooth Scrollbar JavaScript -->
+    <script src="js/smooth-scrollbar.js"></script>
+    <!-- lottie JavaScript -->
+    <script src="js/lottie.js"></script>
+    <!-- am core JavaScript -->
+    <script src="js/core.js"></script>
+    <!-- am charts JavaScript -->
+    <script src="js/charts.js"></script>
+    <!-- am animated JavaScript -->
+    <script src="js/animated.js"></script>
+    <!-- am kelly JavaScript -->
+    <script src="js/kelly.js"></script>
+    <!-- am maps JavaScript -->
+    <script src="js/maps.js"></script>
+    <!-- am worldLow JavaScript -->
+    <script src="js/worldLow.js"></script>
+    <!-- Raphael-min JavaScript -->
+    <script src="js/raphael-min.js"></script>
+    <!-- Morris JavaScript -->
+    <script src="js/morris.js"></script>
+    <!-- Morris min JavaScript -->
+    <script src="js/morris.min.js"></script>
+    <!-- Flatpicker Js -->
+    <script src="js/flatpickr.js"></script>
+    <!-- Style Customizer -->
+    <script src="js/style-customizer.js"></script>
+    <!-- Chart Custom JavaScript -->
+    <script src="js/chart-custom.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/custom.js"></script>
+
+    <script>
+        
+
+    </script>
+</body>
+
+</html>

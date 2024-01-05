@@ -8742,62 +8742,86 @@ $(".table-add").on("click", "i", () => {
 	})
 });
 
-
-if(jQuery('#iq-sale-chart').length){
-	var options = {
-          series: [{
-          name: 'Net Profit',
-          data: [44, 55, 57, 56, 61, 58, 63]
-        }],
+function GetAmount_total() {
+  var token = $.cookie("token");
+  $.ajax({
+    url: `http://localhost:7070/v5/getAllAmountTotal`,
+    type: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .done(function (response) {
+      if (jQuery("#iq-sale-chart").length && response.data.length > 0) {
+        var data = response.data.map((value) => parseInt(value.total_amount));
+		var categories = response.data.map((value) => value.day_of_week);
+        var options = {
+          series: [
+            {
+              name: "Net Profit",
+              data: data,
+            },
+          ],
           chart: {
-          type: 'bar'
-        },
-        colors:['#0dd6b8'],
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '45%',
-            endingShape: 'rounded'
+            type: "bar",
           },
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          show: true,
-          width: 2,
-          colors: ['transparent']
-        },
-        xaxis: {
-          categories: ['s', 'm', 't', 'w', 't', 'f', 's'],
-        },
-        yaxis: {
-          title: {
-            text: ''
+          colors: ["#0dd6b8"],
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              columnWidth: "45%",
+              endingShape: "rounded",
+            },
           },
-          labels: {
-		      offsetX: -20,
-		      offsetY: 0
-		    },
-        },
-         grid: {
-		    padding: {
-		      left: -5,
-		      right: 0
-		    }
-		  },
-        fill: {
-          opacity: 1
-        },
-        tooltip: {
-          y: {
-            formatter: function (val) {
-              return "$ " + val + " thousands"
-            }
-          }
-        }
+          dataLabels: {
+            enabled: false,
+          },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ["transparent"],
+          },
+          xaxis: {
+            categories: categories,
+          },
+          yaxis: {
+            title: {
+              text: "",
+            },
+            labels: {
+              offsetX: -20,
+              offsetY: 0,
+            },
+          },
+          grid: {
+            padding: {
+              left: -5,
+              right: 0,
+            },
+          },
+          fill: {
+            opacity: 1,
+          },
+          tooltip: {
+            y: {
+              formatter: function (val) {
+                return "$ " + val + " thousands";
+              },
+            },
+          },
         };
 
-        var chart = new ApexCharts(document.querySelector("#iq-sale-chart"), options);
+        var chart = new ApexCharts(
+          document.querySelector("#iq-sale-chart"),
+          options
+        );
         chart.render();
+      }
+    })
+    .fail(function (error) {
+      console.log("Error:", error);
+    });
 }
+
+GetAmount_total();
+

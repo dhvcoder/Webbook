@@ -12,7 +12,7 @@ $(document).ready(function () {
       },
     })
       .done(function (response) {
-        $.cookie("token", response.token, { expires: 14, path: "/" });
+        $.cookie("token", response.token, { expires: 1, path: "/" });
         // Kiểm tra xem có user trong mảng hay không
         if (response.user && response.user.length > 0) {
           // Truy cập phần tử đầu tiên của mảng

@@ -1,5 +1,6 @@
 RewriteEngine On
 
 RewriteRule ^trangchu$ index.html [NC,L,QSA]
+RewriteRule ^dashboard$ admin-dashboard.html [NC,L,QSA]
 
 ErrorDocument 404 /404.html

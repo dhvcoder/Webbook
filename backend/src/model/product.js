@@ -81,4 +81,24 @@ Product.updateProduct = async function (newProduct , id , newImg) {
     }
 }
 
+Product.GetCountBook = async function () {
+  try {
+    const query = "SELECT COUNT(*) AS total_book FROM sanpham;";
+    const [result] = await connect.execute(query);
+    return result[0]["total_book"];
+  } catch (error) {
+    throw error;
+  }
+};
+
+Product.UpdateQuatity = async function(qty , id_pr){
+    try {
+        const query = "UPDATE `sanpham` SET `so_luong` = ? WHERE `sanpham`.`id_sanpham` = ?" ;
+        const result = await connect.execute(query , [qty , id_pr]);
+        return result ;
+    } catch (error) {
+        throw error ;
+    }
+}
+
 module.exports = Product;

@@ -14,6 +14,7 @@ function GetCardCheckout() {
         .done(function (response) {
           $("#cart-checkout").html("");
           response.data.forEach((value) => {
+            const total_amount = parseInt(value.gia.replace(/\./g, ""));
             let html = `<li class="checkout-product">
                                        <div class="row align-items-center">
                                           <div class="col-sm-2">
@@ -31,9 +32,7 @@ function GetCardCheckout() {
                                                 <h5>${value.ten}</h5>
                                                 <p class="text-success">Còn hàng</p>
                                                 <div class="">
-                                                   <h5 class ="price">${
-                                                     value.gia
-                                                   } $</h5>
+                                                   <h5 class ="price">${total_amount} VND</h5>
                                                 </div>
                                              </div>
                                           </div>
@@ -54,12 +53,12 @@ function GetCardCheckout() {
                                                          <span class="product-price" id="${
                                                            value.product_id
                                                          }-price" value="${
-              value.gia * value.soluong
+              total_amount * value.soluong
             }">
                                                          ${
-                                                           value.gia *
+                                                           total_amount *
                                                            value.soluong
-                                                         } </span><span>$</span>
+                                                         } </span><span>VND</span>
                                                       </div>
                                                    </div>
                                                 </div>
@@ -75,6 +74,13 @@ function GetCardCheckout() {
                                        </div>
                                     </li>`;
             $("#cart-checkout").append(html);
+            if (!response.infoArray) {
+              return;
+            } else {
+              $("#fullname").val(response.infoArray.fullname);
+              $("#phone").val(response.infoArray.adres);
+              $("#adres").val(response.infoArray.phone);
+            }
           });
         })
         .fail(function (error) {
@@ -158,7 +164,7 @@ $(document).on("change", ".checkbox-item", function () {
   let productPrice = Number(
     document.getElementById(`${clickedValue}-price`).innerText
   );
-
+  console.log(productPrice);
   // Check if the checkbox is checked or unchecked
   if (this.checked) {
     selectedValues.push({
@@ -178,24 +184,28 @@ $(document).on("change", ".checkbox-item", function () {
   }
   console.log("Selected Values:", selectedValues);
   $("#amount_total").text(String(totalAmount));
-  $("#soluong_sp").text("Giá" + " " + selectedValues.length + " " + "sản phẩm");
+  $(".soluong_sp").text("Giá" + " " + selectedValues.length + " " + "sản phẩm");
   $(".total").text(String(totalAmount));
   $(".amount_total").text(String(totalAmount));
+  $("#amount_total").text(String(totalAmount));
 });
 
 function handlOrder() {
-  $(".button-order").on("click", function () {
+  $(".payment-order").on("click", function () {
     const fullname = $("#fullname").val();
     const address = $("#adres").val();
     const phone = $("#phone").val();
-    const amount = $(".amount_total").text();
+    const amount = $("#amount_total").text();
+    var selectedPaymentMethod = $("input[name='customRadio']:checked").val();
     const Data = {
       fullname,
       address,
       phone,
       amount,
       selectedValues,
+      selectedPaymentMethod,
     };
+    console.log(Data);
     if (amount <= 0) {
       swal({
         icon: "error",
@@ -203,7 +213,7 @@ function handlOrder() {
       });
     } else {
       $.ajax({
-        url: `http://localhost:7070/v5/insertOrder`,
+        url: `http://localhost:3001/v6/paymet`,
         type: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -211,11 +221,17 @@ function handlOrder() {
         data: { Data },
       })
         .done(function (response) {
-          swal({
-            icon: "succees",
-            text: response,
-          });
-          console.error("Error:" + error);
+          console.log(response);
+          if(!response.payment){
+            window.location.href = response;
+          }else{
+            swal({
+              icon: "success",
+              text: response.responseText,
+            });
+          }
+         
+          // window.location.href = response;
         })
         .fail(function (error) {
           swal({

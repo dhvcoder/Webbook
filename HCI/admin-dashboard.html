@@ -48,7 +48,7 @@
                            <div class="d-flex align-items-center">
                               <div class="rounded-circle iq-card-icon bg-primary"><i class="ri-user-line"></i></div>
                               <div class="text-left ml-3">                                 
-                                 <h2 class="mb-0"><span class="counter">7900</span></h2>
+                                 <h2 class="mb-0"><span class="counter total-user" id="total-user"></span></h2>
                                  <h5 class="">Người dùng</h5>
                               </div>
                            </div>
@@ -61,7 +61,7 @@
                            <div class="d-flex align-items-center">
                               <div class="rounded-circle iq-card-icon bg-danger"><i class="ri-book-line"></i></div>
                               <div class="text-left ml-3">                                 
-                                 <h2 class="mb-0"><span class="counter">4.8</span>K</h2>
+                                 <h2 class="mb-0"><span class="counter total-book" id="total-book"></span></h2>
                                  <h5 class="">Sách</h5>
                               </div>
                            </div>
@@ -74,7 +74,7 @@
                            <div class="d-flex align-items-center">
                               <div class="rounded-circle iq-card-icon bg-warning"><i class="ri-shopping-cart-2-line"></i></div>
                               <div class="text-left ml-3">                                 
-                                 <h2 class="mb-0"><span class="counter">1.2</span>K</h2>
+                                 <h2 class="mb-0"><span class="counter total-order" id="total-order"></span></h2>
                                  <h5 class="">Đơn Hàng</h5>
                               </div>
                            </div>
@@ -87,7 +87,7 @@
                            <div class="d-flex align-items-center">
                               <div class="rounded-circle iq-card-icon bg-info"><i class="ri-radar-line"></i></div>
                               <div class="text-left ml-3">                                 
-                                 <h2 class="mb-0"><span class="counter">690</span></h2>
+                                 <h2 class="mb-0"><span class="counter total-choduyet" id="total-choduyet"></span></h2>
                                  <h5 class="">Chờ Duyệt</h5>
                               </div>
                            </div>
@@ -202,51 +202,12 @@
                                        <th scope="col">Hóa đơn</th>
                                        <th scope="col">Số tiền</th>
                                        <th scope="col">Tình trạng</th>
-                                       <th scope="col">Hoạt động</th>
+                                       <th scope="col">Xem chi tiết</th>
 
                                     </tr>
                                  </thead>
-                                 <tbody>
-                                    <tr>
-                                       <td>Ông Trần Thuận</td>
-                                       <td>18/10/2019</td>
-                                       <td>20156</td>
-                                       <td>150.000đ</td>
-                                       <td><div class="badge badge-pill badge-success">Đã thanh toán</div></td>
-                                       <td>Sao chép</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Hoàng Vũ</td>
-                                       <td>26/10/2019</td>
-                                       <td>7859</td>
-                                       <td>200.000đ</td>
-                                       <td><div class="badge badge-pill badge-success">Đã thanh toán</div></td>
-                                       <td>Gửi Email</td>
-                                    </tr>
-                                    <tr>
-                                       <td>QT shop</td>
-                                       <td>18/11/2019</td>
-                                       <td>6396</td>
-                                       <td>250.000đ</td>
-                                       <td><div class="badge badge-pill badge-danger">Chưa thanh toán</div></td>
-                                       <td>Trước hạn</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Quang Minh</td>
-                                       <td>14/12/2019</td>
-                                       <td>7854</td>
-                                       <td>500.000đ</td>
-                                       <td><div class="badge badge-pill badge-success">Đã thanh toán</div></td>
-                                       <td>Sao chép</td>
-                                    </tr>
-                                    <tr>
-                                       <td>QT Store</td>
-                                       <td>24/12/2019</td>
-                                       <td>568569</td>
-                                       <td>10000đ</td>
-                                       <td><div class="badge badge-pill badge-success">Đã thanh toán</div></td>
-                                       <td>Gửi Email</td>
-                                    </tr>
+                                 <tbody class="tbody-order">
+                                    
                                  </tbody>
                               </table>
                            </div>
@@ -325,10 +286,14 @@
       <script src="js/flatpickr.js"></script>
       <!-- Style Customizer -->
       <script src="js/style-customizer.js"></script>
+      <script src="js/dashboard.js"></script>
       <!-- Chart Custom JavaScript -->
       <script src="js/chart-custom.js"></script>
       <!-- Custom JavaScript -->
       <script src="js/custom.js"></script>
+      
+
+      
 
 
       <script>

@@ -103,6 +103,23 @@ const middlewareController = {
       }
     }
   },
+
+  checkQuanlityOrder: async (req, res, next) => {
+    const order_detail = req.body.Data.selectedValues;
+
+    for (let i = 0; i < order_detail.length; i++) {
+      console.log(order_detail[i].soluong);
+      const product = await Product.getByID(order_detail[i].id_product);
+
+      for (let j = 0; j < product.length; j++) {
+        if (order_detail[i].soluong > product[j].so_luong) {
+          return res.status(401).json("Quá số lượng trong kho");
+        }
+      }
+    }
+
+    next();
+  },
 };
 
 const uploadFile = async (fileObject) => {
@@ -127,5 +144,7 @@ const uploadFile = async (fileObject) => {
   // console.log(`Uploaded file ${data.name} ${data.id}`);
   return data.id;
 };
+
+
 
 module.exports = middlewareController;

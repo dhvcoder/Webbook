@@ -115,7 +115,7 @@
                                  <hr>
                                  <div class="d-flex justify-content-between">
                                     <span class="text-dark"><strong>Tổng</strong></span>
-                                    <span class="text-dark"><strong id="amount_total"></strong>$</span>
+                                    <span class="text-dark"><strong id="amount_total"></strong>VND</span>
                                  </div>
                                  <button id="place-order" href="" class="btn w-100 btn-primary d-block mt-3 next">Đặt hàng</button>
                               </div>
@@ -185,8 +185,58 @@
                               <div class="iq-card-body">
                                  <h4 class="mb-2">Chi tiết</h4>
                                  <div class="d-flex justify-content-between">
-                                    <span id="soluong_sp"></span>
+                                    <span class="soluong_sp"></span>
                                     <span><strong class="total"></strong>$</span>
+                                 </div>
+                                 <div class="d-flex justify-content-between">
+                                    <span>Phí vận chuyển</span>
+                                    <span class="text-success">Miễn phí</span>
+                                 </div>
+                                 <hr>
+                                 <div class="d-flex justify-content-between">
+                                    <span>Số tiền phải trả</span>
+                                    <span><strong class="amount_total"></strong>VND</span>
+                                 </div>
+                                    <button href="" class="btn w-100 btn-primary d-block mt-3 button-order next">Thanh toán</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="payment" class="card-block p-0 col-12">
+                     <div class="row align-item-center">
+                        <div class="col-lg-8">
+                           <div class="iq-card">
+                              <div class="iq-card-header d-flex justify-content-between">
+                                 <div class="iq-header-title">
+                                    <h4 class="card-title">Lựa chọn thanh toán</h4>
+                                 </div>
+                              </div>
+                              <div class="iq-card-body">
+                                 <div class="card-lists">
+                                    <div class="form-group">
+                                       <div class="custom-control custom-radio">
+                                          <input type="radio" id="netbaking" name="customRadio" class="custom-control-input" value="1">
+                                          <label class="custom-control-label" for="netbaking"> Momo/ZaloPay</label>
+                                       </div>
+                                       <div class="custom-control custom-radio">
+                                          <input type="radio" id="cod" name="customRadio" class="custom-control-input" value="2">
+                                          <label class="custom-control-label" for="cod"> Thanh toán khi giao hàng                                          </label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 
+                                 <button href="" class="btn w-100 btn-primary d-block mt-3 payment-order">Chấp nhận thanh toán</button>
+                              </div>
+                           </div>
+                        </div>
+                         <div class="col-lg-4">
+                           <div class="iq-card">
+                              <div class="iq-card-body">
+                                 <h4 class="mb-2">Chi tiết</h4>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="soluong_sp"></span>
+                                    <span><strong class= "amount_total"></strong>$</span>
                                  </div>
                                  <div class="d-flex justify-content-between">
                                     <span>Phí vận chuyển</span>
@@ -197,80 +247,11 @@
                                     <span>Số tiền phải trả</span>
                                     <span><strong class="amount_total"></strong>$</span>
                                  </div>
-                                    <button href="" class="btn w-100 btn-primary d-block mt-3 button-order">Thanh toán</button>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- <div id="payment" class="card-block p-0 col-12">
-                     <div class="row align-item-center">
-                        <div class="col-lg-8">
-                           <div class="iq-card">
-                              <div class="iq-card-header d-flex justify-content-between">
-                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Lựa chọn thanh toán</h4>
-                                 </div>
-                              </div>
-                              <div class="iq-card-body">
-                                 <form class="mt-3">
-                                    <div class="d-flex align-items-center">
-                                       <span>Mã giảm giá: </span>
-                                       <div class="cvv-input ml-3 mr-3">
-                                          <input type="text" class="form-control" required=""> 
-                                       </div>
-                                       <button type="submit" class="btn btn-primary">Tiếp tục</button>
-                                    </div>
-                                 </form>
-                                 <hr>
-                                 <div class="card-lists">
-                                    <div class="form-group">
-                                       <div class="custom-control custom-radio">
-                                          <input type="radio" id="credit" name="customRadio" class="custom-control-input">
-                                          <label class="custom-control-label" for="credit"> Thẻ Tín dụng / Ghi nợ / ATM</label>
-                                       </div>
-                                       <div class="custom-control custom-radio">
-                                          <input type="radio" id="netbaking" name="customRadio" class="custom-control-input">
-                                          <label class="custom-control-label" for="netbaking"> Momo/ZaloPay</label>
-                                       </div>
-                                       <div class="custom-control custom-radio">
-                                          <input type="radio" id="emi" name="emi" class="custom-control-input">
-                                          <label class="custom-control-label" for="emi"> Trả góp</label>
-                                       </div>
-                                       <div class="custom-control custom-radio">
-                                          <input type="radio" id="cod" name="cod" class="custom-control-input">
-                                          <label class="custom-control-label" for="cod"> Thanh toán khi giao hàng                                          </label>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <hr>
-                                 <a id="deliver-address" href="javascript:void();" class="btn btn-primary d-block mt-1 next">Thanh toán</a>
-
-                              </div>
-                           </div>
-                        </div>
-                         <div class="col-lg-4">
-                           <div class="iq-card">
-                              <div class="iq-card-body">
-                                 <h4 class="mb-2">Chi tiết</h4>
-                                 <div class="d-flex justify-content-between">
-                                    <span>Giá 3 sản phẩm</span>
-                                    <span><strong>329.900đ</strong></span>
-                                 </div>
-                                 <div class="d-flex justify-content-between">
-                                    <span>Phí vận chuyển</span>
-                                    <span class="text-success">Miễn phí</span>
-                                 </div>
-                                 <hr>
-                                 <div class="d-flex justify-content-between">
-                                    <span>Số tiền phải trả</span>
-                                    <span><strong>329.900đ</strong></span>
-                                 </div>
                               </div>
                            </div>
                         </div> 
                      </div>
-                  </div> -->
+                  </div>
                </div>
             </div>
          </div>
@@ -348,5 +329,14 @@
       <!-- Custom JavaScript -->
       <script src="js/custom.js"></script>
       <script src="js/checkout.js"></script>
+
+      <script>
+         $(".button-order").on('click' , function() {
+            $("#address").removeClass("show");
+            $("#payment").addClass("show");
+         })
+
+         
+      </script>
    </body>
 </html>

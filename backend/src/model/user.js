@@ -70,5 +70,14 @@ User.Delete = async function(id){
     throw error
   }
 }
+User.GetCount = async function(){
+ try {
+   const query = "SELECT COUNT(*) AS total_users FROM user";
+   const [result] = await conn.execute(query, );
+   return result[0]["total_users"];
+ } catch (error) {
+   throw error;
+ }
+}
 
 module.exports = User;

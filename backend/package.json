@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
+    "start1": "nodemon src/momo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "base-64": "^1.0.0",
     "bcrypt": "^5.1.1",
     "cookie": "^0.6.0",
     "cors": "^2.8.5",
